@@ -20,12 +20,12 @@ def update
 end
 
 def destroy
-  menu.destroy
+  @menu.destroy
 end
 
 private
 def set_menu
-  menu = Menu.find(params[:id])
+  @menu = Menu.find(params[:id])
 end
 
 end

@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuItems from './MenuItems';
-import axios from 'axios';
+// import axios from 'axios';
 import { Card,} from 'semantic-ui-react';
 
 
@@ -12,6 +12,7 @@ const MenuList = ({ menus, updateMenu, deleteMenu }) => {
       { menus.map( m => 
       <Card key={m.id}>
         <Card.Header as="h2" key={m.id}>{m.name}</Card.Header>
+        <h6 onClick={() => deleteMenu(m.id)}>Delete Menu</h6>
         <MenuItems
         id={m.id}
         />
@@ -26,7 +27,6 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     margin: "10px",
-    alignItems: "center",
     textAlign: "center",
   }
 }
