@@ -3,7 +3,7 @@ class Api::ItemsController < ApplicationController
   before_action :set_item, only: [:update, :destroy]
 
   def index
-    render json: Item.all
+    render json: @menu.items
   end
 
   def create
@@ -11,7 +11,7 @@ class Api::ItemsController < ApplicationController
     if item.save
       render json: item
     else
-      render json: {errors: item.errors}, status: :unprocessable_entity
+      render json: {errors: item.errors}
     end
   end
 
@@ -22,13 +22,13 @@ class Api::ItemsController < ApplicationController
 
   def destroy
     item.destroy
-    render json: {message: 'Item deleted')}
+    render json: {message: 'Item deleted'}
   end
 
   private
   
     def set_menu
-      menu = Menu.find(params[:menu_id])
+      @menu = Menu.find(params[:menu_id])
     end
 
     def set_item

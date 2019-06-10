@@ -10,7 +10,7 @@ def create
   if menu.save
     render json: menu
   else
-    render json: {errors: menu.errors }, status :unprocessable_entity
+    render json: {errors: menu.errors }
   end
 end
 
