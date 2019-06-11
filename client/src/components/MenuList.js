@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuItems from './MenuItems';
 // import axios from 'axios';
-import { Card,} from 'semantic-ui-react';
+import { Card, Button, Icon} from 'semantic-ui-react';
 
 
 const MenuList = ({ menus, updateMenu, deleteMenu }) => {
@@ -11,10 +11,14 @@ const MenuList = ({ menus, updateMenu, deleteMenu }) => {
     <div style={styles.menus}>
       { menus.map( m => 
       <Card key={m.id}>
-        <Card.Header as="h2" key={m.id}>{m.name}</Card.Header>
-        <h6 onClick={() => deleteMenu(m.id)}>Delete Menu</h6>
+        <Card.Header as="h2" key={m.id}>{m.name}{' '}
+        <Button icon basic color='red' size='mini'  onClick={() => deleteMenu(m.id)}>
+          <Icon name='trash'/>
+        </Button>
+        </Card.Header>
         <MenuItems
         id={m.id}
+        menu={m}
         />
       </Card>
       )}

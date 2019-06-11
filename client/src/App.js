@@ -3,6 +3,7 @@ import './App.css';
 import MenuForm from './components/MenuForm';
 import MenuList from './components/MenuList';
 import axios from 'axios';
+import ItemForm from './components/ItemForm';
 import { Container, Header,} from 'semantic-ui-react';
 
 class App extends Component{
@@ -50,7 +51,12 @@ class App extends Component{
           updateMenu={this.updateMenu}
           deleteMenu={this.deleteMenu}
         />
+        <div>
+        <ItemForm
+          menus={this.state.menus}
+          />
         <MenuForm add={this.addMenu}/>
+        </div>
       </Container>
     );
   };

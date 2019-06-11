@@ -16,7 +16,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
-    item.update(:name, :description, :price, :available, :menu_id)
+    item.update(:available, :name, :description, :price)
     render json: item
   end
 

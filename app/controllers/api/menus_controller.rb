@@ -15,8 +15,8 @@ def create
 end
 
 def update
-  menu.update(name)
-  render json: menu
+  @menu.update(name: :name)
+  render json: @menu
 end
 
 def destroy
