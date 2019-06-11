@@ -47,7 +47,7 @@ class App extends Component{
         <Header as='h1'>Restaurant</Header>
         <MenuList 
           menus={this.state.menus}
-          items={this.state.items}
+          // items={this.state.items}
           updateMenu={this.updateMenu}
           deleteMenu={this.deleteMenu}
         />

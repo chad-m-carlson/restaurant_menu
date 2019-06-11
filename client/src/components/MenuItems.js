@@ -37,16 +37,17 @@ class MenuItems extends Component {
       <>
         {items.map( i => 
           <div key={i.id}>
-            <h4>{i.name}</h4>
-            <p>{i.description}</p>
-            <h6>{i.price}</h6>
-            <Checkbox
+            <h4>{i.name} | {i.price}</h4>
+            <p style={{padding: '5px'}}><i>{i.description}</i></p>
+            <Checkbox toggle
+              style={{marginBottom: '10px', fontSize: '10px'}}
               label='Available?'
               name='available'
               defaultChecked={i.available}
               onClick={() => this.handleClick(i)}
               default={true}
             />
+            <hr />
           </div>)}
       </>
     );
